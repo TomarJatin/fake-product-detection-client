@@ -4,10 +4,12 @@ import { ConnectWallet, useAddress, useContract, useContractRead, Web3Button, } 
 import { NextPage } from "next";
 import FormField from "../../components/FormField";
 import { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
 
 const CreateQr: NextPage = () => {
   const contractAddress = "0x2c9F16B88F3AA7b4eCA45115eDedE00172c9E44f";
   const address = useAddress();
+  const router = useRouter();
   const { Canvas } = useQRCode();
   const { contract } = useContract(contractAddress);
   const [login, setLogin] = useState(false);
@@ -31,13 +33,16 @@ const CreateQr: NextPage = () => {
 
   return (
     <main >
-      <h1>Create qr</h1>
+      <div className="w-full flex flex-col items-end px-[5%] pt-[20px]">
       <ConnectWallet
               dropdownPosition={{
                 side: "bottom",
                 align: "center",
               }}
             />
+      </div>
+
+      <h1 className="text-[32px] font-bold text-center">Create Qr</h1>
 
               {
                 !isLoading ? (
@@ -78,9 +83,14 @@ const CreateQr: NextPage = () => {
               }
             </div>
                       ) : (
-                        <div>
-                          Login here
-                        </div>
+                        <Web3Button
+                        className='mt-[40px]'
+                contractAddress={contractAddress}
+                action={() => router.push('/manufacturer')
+                }
+              >
+                Login Here
+              </Web3Button>
                       )
                     }
                   </div>

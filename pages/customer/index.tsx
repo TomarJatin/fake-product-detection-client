@@ -34,13 +34,16 @@ const Customer: NextPage = () => {
 
   return (
     <main >
-      <h1>Customers</h1>
+      <div className="w-full flex flex-col items-end px-[5%] pt-[20px]">
       <ConnectWallet
               dropdownPosition={{
                 side: "bottom",
                 align: "center",
               }}
             />
+      </div>
+
+      <h1 className="text-[32px] font-bold text-center">Customers</h1>
 
 {
                 !isLoading ? (

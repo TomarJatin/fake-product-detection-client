@@ -63,13 +63,17 @@ const CreateProduct: NextPage = () => {
 
   return (
     <main>
-      <h1>CreateProduct</h1>
+      
+      <div className="w-full flex flex-col items-end px-[5%] pt-[20px]">
       <ConnectWallet
-        dropdownPosition={{
-          side: "bottom",
-          align: "center",
-        }}
-      />
+              dropdownPosition={{
+                side: "bottom",
+                align: "center",
+              }}
+            />
+      </div>
+
+      <h1 className="text-[32px] font-bold text-center">Create Product</h1>
 
       {!isLoading ? (
         <div>

@@ -35,13 +35,17 @@ const Manufacturer: NextPage = () => {
 
   return (
     <main >
-      <h1>Manufacturer</h1>
+      
+      <div className="w-full flex flex-col items-end px-[5%] pt-[20px]">
       <ConnectWallet
               dropdownPosition={{
                 side: "bottom",
                 align: "center",
               }}
             />
+      </div>
+
+      <h1 className="text-[32px] font-bold text-center">Manufacturer</h1>
 
             
 

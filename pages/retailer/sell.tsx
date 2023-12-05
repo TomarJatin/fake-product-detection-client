@@ -27,13 +27,16 @@ const Sell: NextPage = () => {
 
   return (
     <main >
-      <h1>Sell to customer</h1>
+      <div className="w-full flex flex-col items-end px-[5%] pt-[20px]">
       <ConnectWallet
               dropdownPosition={{
                 side: "bottom",
                 align: "center",
               }}
             />
+      </div>
+
+      <h1 className="text-[32px] font-bold text-center">Sell to customer</h1>
 
               {
                 !isLoading ? (
@@ -76,9 +79,14 @@ const Sell: NextPage = () => {
               </Web3Button>
             </div>
                       ) : (
-                        <div>
-                          Login here
-                        </div>
+                        <Web3Button
+                        className='mt-[40px]'
+                contractAddress={contractAddress}
+                action={() => router.push('/retailer')
+                }
+              >
+                Login Here
+              </Web3Button>
                       )
                     }
                   </div>

@@ -28,13 +28,16 @@ const Verify: NextPage = () => {
 
   return (
     <main>
-      <h1>Create qr</h1>
+      <div className="w-full flex flex-col items-end px-[5%] pt-[20px]">
       <ConnectWallet
-        dropdownPosition={{
-          side: "bottom",
-          align: "center",
-        }}
-      />
+              dropdownPosition={{
+                side: "bottom",
+                align: "center",
+              }}
+            />
+      </div>
+
+      <h1 className="text-[32px] font-bold text-center">Verify Product Details</h1>
 
       <div className="px-[10%] py-[40px] flex flex-col gap-[20px] items-center">
         <FormField
