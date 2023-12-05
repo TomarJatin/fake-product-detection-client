@@ -1,13 +1,23 @@
 import { ConnectWallet, useAddress, useContract, useContractRead } from "@thirdweb-dev/react";
-import styles from "../styles/Home.module.css";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import { NextPage } from "next";
 
 const Customer: NextPage = () => {
   const contractAddress = "0x2c9F16B88F3AA7b4eCA45115eDedE00172c9E44f";
   const address = useAddress();
   const { contract } = useContract(contractAddress);
-  // const { data, isLoading, error } = useContractRead(contract, "getTodo", []);
+  const [login, setLogin] = useState(false);
+  const { data, isLoading, error } = useContractRead(contract, "getRetailerDetails", [address]);
+
+  useEffect(() => {
+    console.log("data : ", data);
+    if(data && data[2] === address){
+      setLogin(true);
+    }
+    else{
+      setLogin(false);
+    }
+  }, [data, address]);
 
   return (
     <main >
@@ -19,13 +29,21 @@ const Customer: NextPage = () => {
               }}
             />
 
-            {/* <Web3Button
-              contractAddress={contractAddress}
-              action={(contract) => contract.call("setTodo", input)}
-              accentColor="#1ce"
-            >
-              Set Todo
-            </Web3Button> */}
+{
+                !isLoading ? (
+                  <div>
+                    {
+                      login ? (
+                        <div>Logged In</div>
+                      ) : (
+                        <div>
+                          Login here
+                        </div>
+                      )
+                    }
+                  </div>
+                ): null
+              }
     </main>
   );
 };
