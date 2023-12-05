@@ -1,9 +1,7 @@
-import { ConnectWallet, useAddress, useContract, useContractRead } from "@thirdweb-dev/react";
-import styles from "../styles/Home.module.css";
-import Image from "next/image";
+import { ConnectWallet, useAddress, useContract, useContractRead, Web3Button, } from "@thirdweb-dev/react";
 import { NextPage } from "next";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-
 const Home: NextPage = () => {
   const contractAddress = "0x2c9F16B88F3AA7b4eCA45115eDedE00172c9E44f";
   const address = useAddress();
@@ -22,11 +20,29 @@ const Home: NextPage = () => {
             />
             {
               address ? (
-                <div>
-                  <button onClick={() => router.push("/retailer")}>Retailer</button>
-                  <button onClick={() => router.push("/customer")}>Customer</button>
-                  <button onClick={() => router.push("/manufacturer")}>Manufacturer</button>
-                </div>
+                <div className="px-[10%] py-[40px] flex flex-col gap-[20px] ">
+              <Web3Button
+                contractAddress={contractAddress}
+                action={() => router.push("/customer")
+                }
+              >
+                Customer
+              </Web3Button>
+              <Web3Button
+                contractAddress={contractAddress}
+                action={() => router.push("/retailer")
+                }
+              >
+                Retailer
+              </Web3Button>
+              <Web3Button
+                contractAddress={contractAddress}
+                action={() => router.push("/manufacturer")
+                }
+              >
+                Manufacturer
+              </Web3Button>
+            </div>
               ): null
             }
     </main>
