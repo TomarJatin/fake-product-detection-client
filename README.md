@@ -74,6 +74,19 @@ Contract repo - https://github.com/TomarJatin/thirdweb-contracts
 - ThirdWeb: A library that simplifies the interaction with smart contracts using Web3.js and ethers.js.
 - Solidity: A contract-oriented programming language for writing smart contracts on the Ethereum platform.
 
+## Contributers
+<div>
+  <a href="https://github.com/GenMech">
+    <img src="https://avatars.githubusercontent.com/u/85284840?v=4" style="border-radius: 80px; width: 100px; height: 100px;" />
+  </a>
+  <p>Genmech</p>
+  <a href="https://github.com/TomarJatin">
+    <img src="https://avatars.githubusercontent.com/u/91650461?v=4" style="border-radius: 80px; width: 100px; height: 100px;" />
+  </a>
+<p>Jatin Tomar</p>
+</div>
+
+
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request to this repository.
