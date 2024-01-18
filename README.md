@@ -2,7 +2,7 @@
 
 A blockchain-based Product Ownership Management System for anti-counterfeits in the Post Supply Chain.
 
-Live Website - https://sweet-maamoul-0cd768.netlify.app/
+Live Website - fake-product-detection-client.vercel.app
 Contract repo - https://github.com/TomarJatin/thirdweb-contracts
 
 ## Table of Contents
